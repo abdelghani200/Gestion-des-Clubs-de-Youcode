@@ -3,7 +3,7 @@
 $host ='localhost';
 $user ='root';
 $password ='';
-$namebasedonnee='sign';
+$namebasedonnee='gestion clubs';
 
 
 $connection = mysqli_connect($host,$user,$password,$namebasedonnee);

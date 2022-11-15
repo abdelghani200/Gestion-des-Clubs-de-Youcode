@@ -27,7 +27,39 @@ if(isset($_POST['submit'])){
 </head>
 <body>
 
-     
+<section class="login py-5 ">
+    <div class="contaner">
+        <div class="row g-0"id="form-to">
+            <div class="col-lg-5">
+                <img src="images/logo-youcode-ma.png">
+            </div>
+            <div class="col-lg-7 text-center py-5">
+              <h1>Welcome <span class="back">Back</span></h1>
+              <form action="index.php" method="POST">
+                <div class="form-row pt-3 pt-5">
+                  <div class="offset-1 col-lg-10">
+                     <input type="text" class="np px-3" name="name" placeholder="Username">
+                  </div>
+                </div>
+                <div class="form-row pt-3">
+                  <div class="offset-1 col-lg-10">
+                     <input type="password" class="np px-3" name="name" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-row py-3">
+                  <div class="offset-1 col-lg-10">
+                     <button class="btn1" name="submit">SingUp</button>
+                  </div>
+                </div>
+
+              </form>
+              <p>Or Login With</p>
+              <span class="icon-fb"><ion-icon name="logo-facebook"></ion-icon></span>
+              <span class="icon-gl"><ion-icon name="logo-google"></ion-icon></span>
+            </div>
+        </div>
+    </div>
+  </section>
 
 </body>
 </html>
