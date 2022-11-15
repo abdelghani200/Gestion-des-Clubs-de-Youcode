@@ -1,7 +1,14 @@
 
 <?php
+    
     session_start();
+
     require  'connection.php';
+    
+ 
+    include_once('index.php');
+
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -33,11 +40,11 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>ID</th>
-                                    <th>Student FirstName</th>
-                                    <th>Student SecondName</th>
+                                    <th>Id</th>
+                                    <th>Nom Apprenant</th>
+                                    <th>Prenom Apprenant</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
+                                    <th>Photo</th>
                                     <th>Clubs</th>
                                     <th>Action</th>
                                 </tr>
@@ -46,24 +53,28 @@
                                 <?php 
                                     $query = "SELECT * FROM apprenants";
                                     $query_run = mysqli_query($connection, $query);
+                                    $_SESSION['count'] = mysqli_num_rows($query_run);
 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
                                         foreach($query_run as $student)
                                         {
+                                                                   
                                             ?>
                                             <tr>
                                                 <td><?= $student['id']; ?></td>
                                                 <td><?= $student['nom']; ?></td>
                                                 <td><?= $student['prenom']; ?></td>
                                                 <td><?= $student['email']; ?></td>
-                                                <td><?= $student['phone']; ?></td>
+                                                <td><?= $student['photo']; ?></td>
                                                 <td><?= $student['club']; ?></td>
+                                                <td><?= mysqli_num_rows($query_run) ?></td>
+                                                
                                                 <td>
-                                                    <a href="viewApp.php?id=<?= $student['id']; ?>" class="btn btn-info btn-sm">View</a>
+                                                    
                                                     <a href="editApp.php?id=<?= $student['id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="code.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_student" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    <form action="indexApp.php" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_App" value="<?=$student['id'];?>" class="btn btn-danger btn-sm">Delete</button>
                                                     </form>
                                                 </td>
                                             </tr>
@@ -74,6 +85,7 @@
                                     {
                                         echo "<h5> No Record Found </h5>";
                                     }
+
                                 ?>
                                 
                             </tbody>
@@ -89,3 +101,4 @@
 
 </body>
 </html>
+

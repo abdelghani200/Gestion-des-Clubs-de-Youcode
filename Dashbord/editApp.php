@@ -1,6 +1,8 @@
 <?php
-session_start();
+
 include('connection.php');
+
+
 ?>
 
 <!doctype html>
@@ -34,16 +36,20 @@ include('connection.php');
                             <?php
                         if(isset($_GET['id'])){
                             $app_id = mysqli_real_escape_string($connection, $_GET['id']);
+
                             $query = "SELECT * FROM apprenants WHERE id='$app_id' ";
                             $query_run = mysqli_query($connection, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
                             {
                                 $app = mysqli_fetch_array($query_run);
+                                // print_r($app);
                                 ?>
 
                                 <form action="indexApp.php" method="POST">
+
                                 <input type="hidden" name="app_id" value="<?= $app['id']; ?>">
+                                
                                     <div class="mb-3">
                                         <label>Apprenant FirstName</label>
                                         <input type="text" name="name" value="<?=$app['nom'];?>" class="form-control">
@@ -58,7 +64,7 @@ include('connection.php');
                                     </div>
                                     <div class="mb-3">
                                         <label>Apprenant Phone</label>
-                                        <input type="tel" name="phone" value="<?=$app['phone'];?>" class="form-control">
+                                        <input type="file" name="photo" value="<?=$app['photo'];?>" class="form-control">
                                     </div>
                                     <div class="mb-3">
                                         <label>Choisir un club</label>
@@ -69,7 +75,7 @@ include('connection.php');
                                         </select>
                                     </div>
                                     <div class="mb-3">
-                                        <button type="submit" name="update_student" class="btn btn-primary">
+                                        <button type="submit" name="update_Apprenant" class="btn btn-primary">
                                             Update Student
                                         </button>
                                     </div>

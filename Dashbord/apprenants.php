@@ -5,6 +5,8 @@
  
  include_once('index.php');
 
+ 
+
 ?>
 
 
@@ -25,7 +27,7 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="indexApp.php" method="POST">
+                    <form action="indexApp.php" method="POST"> 
                         <div class="mb-3">
                             <label>Apprenant FirstName</label>
                             <input type="text" name="name" class="form-control">
@@ -39,8 +41,9 @@
                             <input type="email" name="email" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Apprenant Phone</label>
-                            <input type="tel" name="phone" class="form-control">
+                            <label>Apprenant Photo</label>
+                            <!-- <img src="/images/youcode.jpg" name="photo"  class="form-control"> -->
+                            <input type="file" name="photo" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label>Choisir un club</label>
@@ -51,7 +54,7 @@
                             </select>
                         </div>
                         <div class="mb-3">
-                            <button type="submit" name="save-apprenant" class="btn btn-primary"> Save Apprenant</button>
+                        <button type="submit" name="save-apprenant" class="btn btn-primary">Save Student</button>
                         </div>
                     </form>
                 </div>

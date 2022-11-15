@@ -2,9 +2,11 @@
 
 include('connection.php');
 
+session_start();
+
 if(isset($_POST['submit'])){
     $name=htmlspecialchars(strtolower(trim($_POST['name'])));
-    $pass=htmlspecialchars(strtolower(trim($_POST['password'])));
+    $pass=md5($_POST['password']);
     $query = "INSERT INTO users(name,password)VALUE('$name','$pass')";
 
     if(mysqli_query($connection,$query)){
@@ -14,6 +16,8 @@ if(isset($_POST['submit'])){
 
 
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -43,12 +47,12 @@ if(isset($_POST['submit'])){
                 </div>
                 <div class="form-row pt-3">
                   <div class="offset-1 col-lg-10">
-                     <input type="password" class="np px-3" name="name" placeholder="Password">
+                     <input type="password" class="np px-3" name="password" placeholder="Password">
                   </div>
                 </div>
                 <div class="form-row py-3">
                   <div class="offset-1 col-lg-10">
-                     <button class="btn1" name="submit">SingUp</button>
+                     <button type="submit" class="btn1" name="submit">SingUp</button>
                   </div>
                 </div>
 

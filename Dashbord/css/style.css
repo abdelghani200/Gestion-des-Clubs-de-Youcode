@@ -166,7 +166,7 @@ body{
     width:100vw;
 }
 .container{
-    background: RED;
+    /* background: RED; */
     display:block;
     margin-top: 100px !important; 
 }
