@@ -9,7 +9,9 @@
     <title>Dashboard</title>
     <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/style.css">
+    
+    <link rel="stylesheet" href="css/style.css?v=<?php echo time(); ?>">
+
 
 </head>
 <body>
@@ -25,19 +27,21 @@
                     <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-users"></span>
+                    <a href="acceuil.php"><span class="las la-users"></span>
                     <span>Accueil</span></a>
                 </li>
                 <li>
                     <a href=""><span class="las la-clipboard-list"></span>
                     <span>Clubs</span></a>
                 </li>
-                <li>
-                    <a href="apprenants.php"><span class="las la-shopping-bag"></span>
-                    <span>Apprenants</span></a>
+                <li class="dash-nav-dropdown-menu">
+                    <a href="apprenants.php"><span class="las la-users"></span>
+                    <span>Apprenants</span>
+                    </a>
                 </li>
                 
             </ul>
+            
         </div>
     </div>
 
@@ -60,35 +64,7 @@
             </div>
         </header>
 
-        <main>
-            <div class="cards">
-                <div class="card-single">
-                    <div>
-                        <h1><?php 
-                        
-                        echo $_SESSION['count'] ?>
-                        </h1>
-                        <span>Apprenants</span>
-                    </div>
-                    <div>
-                        <span class="las la-users"></span>
-                    </div>
-                </div>
+        
 
-            
-                <div class="card-single">
-                    <div>
-                        <h1>79</h1>
-                        <span>clubs</span>
-                    </div>
-                    <div>
-                        <span class="las la-clipboard-list"></span>
-                    </div>
-                </div>
+       
            
-           
-                
-                    
-            </div>
-        </main>
-    

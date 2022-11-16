@@ -65,7 +65,33 @@ if(isset($_POST['delete_App']))
     if($query_run)
     {
         echo "Student Deleted Successfully";
-        header("Location: displayApp.php");
+        header("Location: acceuil.php");
+        exit(0);
+    }
+    else
+    {
+        echo "Student Not Deleted";
+        header("Location: insertClub.php");
+        exit(0);
+    }
+}
+
+
+
+if(isset($_POST['save-club']))
+{
+    $logo=mysqli_real_escape_string($connection,$_POST['logo']);
+    $name=mysqli_real_escape_string($connection,$_POST['name']);
+    $date=mysqli_real_escape_string($connection,$_POST['date-creation']);
+    $desc=mysqli_real_escape_string($connection,$_POST['description']);
+
+    $query = "INSERT INTO club (logo,nom,dateCreation,description)VALUE('$logo','$name','$date','$desc')";
+    $query_run = mysqli_query($connection, $query);
+
+    if($query_run)
+    {
+        echo "Student Deleted Successfully";
+        header("Location: acceuil.php");
         exit(0);
     }
     else
