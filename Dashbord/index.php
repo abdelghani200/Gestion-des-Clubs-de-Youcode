@@ -23,7 +23,7 @@
         <div class="sidebar-menu">
             <ul>
                 <li>
-                    <a href="" class="active"><span class="las la-igloo"></span>
+                    <a href="dashboard.php" class="active"><span class="las la-igloo"></span>
                     <span>Dashboard</span></a>
                 </li>
                 <li>
@@ -31,7 +31,7 @@
                     <span>Accueil</span></a>
                 </li>
                 <li>
-                    <a href=""><span class="las la-clipboard-list"></span>
+                    <a href="insertClub.php"><span class="las la-clipboard-list"></span>
                     <span>Clubs</span></a>
                 </li>
                 <li class="dash-nav-dropdown-menu">

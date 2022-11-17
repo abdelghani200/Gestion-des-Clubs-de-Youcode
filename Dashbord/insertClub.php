@@ -38,7 +38,7 @@
                         </div>
                         <div class="mb-3">
                             <label>Date de Création</label>
-                            <input type="text" name="date-creation" class="form-control">
+                            <input type="date" name="date-creation" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label>Description</label>
@@ -54,7 +54,7 @@
     </div>
 
 
- </div> 
+ <!-- </div>  -->
  
 </body>
 </html>

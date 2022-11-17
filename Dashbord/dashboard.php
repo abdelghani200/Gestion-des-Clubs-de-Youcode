@@ -33,7 +33,16 @@
             
                 <div class="card-single">
                     <div>
-                        <h1>79</h1>
+                        <h1><?php 
+                            
+                            $query = "SELECT id FROM club ORDER BY id";
+                            $query_run = mysqli_query($connection,$query);
+
+                            $row = mysqli_num_rows($query_run);
+                            echo  $row;
+                             
+                            ?>
+                        </h1>
                         <span>clubs</span>
                     </div>
                     <div>

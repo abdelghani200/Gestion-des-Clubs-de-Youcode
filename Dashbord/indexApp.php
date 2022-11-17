@@ -91,7 +91,7 @@ if(isset($_POST['save-club']))
     if($query_run)
     {
         echo "Student Deleted Successfully";
-        header("Location: acceuil.php");
+        header("Location: club11.php");
         exit(0);
     }
     else

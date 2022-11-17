@@ -131,7 +131,7 @@ main{
     flex-direction: column;
     align-items: center;
     gap: 2rem;
-   
+    /* background: red; */
     
 }
 
@@ -160,12 +160,12 @@ main{
     font-size: 3rem;
     color: var(--main-color);
 }
-
+/* 
 body{
     width:100vw;
 }
 .container{
-    /* background: RED; */
+    
     display:block;
     margin-top: 100px !important; 
 }
@@ -173,20 +173,29 @@ body{
 #code{
     color: var(--main-color);
 }
-
+*/
 .card{
-    width: 600px;
+    width: 400px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+} 
+
+
+.howa{
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    margin-top: 4.5rem;
 }
 
-.cont-clb{
-    margin-top: 4rem;
-    display: flex;
-    flex-wrap: wrap;
+.clubhowa{
+    margin-top: 4.5rem;
 }
 
-.card-group{
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    
+#code{
+    color: #63aaca;
+}
+
+.title-acceuil{
+    margin-top: 4.5rem;
 }
