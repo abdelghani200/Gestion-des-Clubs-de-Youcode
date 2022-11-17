@@ -32,6 +32,8 @@
                                 <div class="card-footer">
                                 <small class="text-muted"><?= $club['dateCreation']; ?></small>
                                 </div>
+
+                                <button type="button" class="btn btn-outline-primary">Decouvrire Les membres</button>
                             </div>
                         <?php
                     }    

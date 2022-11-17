@@ -48,9 +48,9 @@
                         <div class="mb-3">
                             <label>Choisir un club</label>
                             <select name="selectClub" class="form-control">
-                                <option value="" name="selectClub">Club Art</option>
-                                <option value="" name="selectClub">Club Sport</option>
-                                <option value="" name="selectClub">Club chtih</option>
+                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club Art</option>
+                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club Sport</option>
+                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club chtih</option>
                             </select>
                         </div>
                         <div class="mb-3">
