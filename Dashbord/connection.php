@@ -3,16 +3,15 @@
 $host ='localhost';
 $user ='root';
 $password ='';
-$namebasedonnee='gestionclubs';
+$namebasedonnee='youcodeclub';
 $connection = mysqli_connect($host,$user,$password,$namebasedonnee);
 
-if($connection){
-    echo "connected";
-}else{
-    echo "hhhhhhhhhhhhhhh";
-}
+// if($connection){
+//     echo "connected";
+// }else{
+//     echo "hhhhhhhhhhhhhhh";
+// }
 
 
 
 ?>
-

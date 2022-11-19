@@ -4,6 +4,7 @@
 <?php
  
  include_once('index.php');
+ include('connection.php');
 
  
 
@@ -27,30 +28,44 @@
                     </h4>
                 </div>
                 <div class="card-body">
-                    <form action="indexApp.php" method="POST"> 
+                    <form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
                         <div class="mb-3">
-                            <label>Apprenant FirstName</label>
+                            <label>Name</label>
                             <input type="text" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Apprenant SecondName</label>
-                            <input type="text" name="secondname" class="form-control">
+                            <label>Age</label>
+                            <input type="number" name="Age" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Apprenant Email</label>
-                            <input type="email" name="email" class="form-control">
+                            <label>Classroom</label>
+                            <input type="text" name="Classroom" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Apprenant Photo</label>
-                            <!-- <img src="/images/youcode.jpg" name="photo"  class="form-control"> -->
-                            <input type="file" name="photo" class="form-control">
+                        <label>role</label>
+                            <select name="rolee" id="" class="form-control">
+                                <option value="member">member</option>
+                                <option value="president">president</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                             <label>Choisir un club</label>
                             <select name="selectClub" class="form-control">
-                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club Art</option>
-                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club Sport</option>
-                                <option value="<?= $student['club_id']; ?>" name="selectClub">Club chtih</option>
+                                <?php
+                                    $result = mysqli_query($connection, "SELECT nom FROM club;");
+                                    while ($tables = mysqli_fetch_row($result)){
+                                        ?>
+                                        <option value="<?php
+                                        echo($tables[0]);
+                                        ?>
+                                        ">
+                                        <?php
+                                        echo($tables[0]);
+                                        ?>
+                                        <?php
+                                    }
+                                    ?>
+                                    </option>
                             </select>
                         </div>
                         <div class="mb-3">

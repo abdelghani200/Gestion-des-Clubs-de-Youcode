@@ -4,9 +4,9 @@
     session_start();
 
     require  'connection.php';
-    include_once('index.php');
     
  
+    include_once('index.php');
 
 
 ?>
@@ -40,20 +40,22 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nom Apprenant</th>
-                                    <th>Classroom</th>
-                                    <th>Age</th>
-                                    <th>Photo</th>
-                                    <th>Action</th>
-                                    <th>Club</th>
+                                    
+                                    <th>nom</th>
+                                    <th>clasee</th>
+                                    <th>age</th>
+                                    <th>rele</th>
+                                    
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $query = "SELECT * from apprenant";
+                                    $query = "SELECT * FROM `apprenant` INNER JOIN club ON club.id = apprenant.id_fr";
+
                                     $query_run = mysqli_query($connection, $query);
                                     $_SESSION['count'] = mysqli_num_rows($query_run);
-                                    
+
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
                                         foreach($query_run as $student)
@@ -65,18 +67,7 @@
                                                 <td><?= $student['classe']; ?></td>
                                                 <td><?= $student['age']; ?></td>
                                                 <td><?= $student['role']; ?></td>
-                                                <?php  $id_fr  = $student['id_fr'] ; ?>
-                                                <td>
                                                 
-                                                    <a href="editApp.php?id=<?= $student['id_pr']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="indexApp.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_App" value="<?=$student['id_pr'];?>" class="btn btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </td>
-                                                    <?php
-                                                    $sqlresult = mysqli_fetch_row(mysqli_query($connection, "SELECT nom FROM `club` WHERE id = $id_fr;"));
-                                                    ?>
-                                                <td><?= $sqlresult[0]?></td>
                                             </tr>
                                             <?php
                                         }
@@ -101,3 +92,4 @@
 
 </body>
 </html>
+
