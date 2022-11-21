@@ -6,12 +6,12 @@
     require  'connection.php';
     
  
-    include_once('index.php');
+    include_once('header.php');
 
 
 ?>
              <center><h1 class="title-acceuil">You<span id="code">Code</span> Clubs</h1></center>
-    <div class="howa">
+    <div class="container howa">
              
             <?php
               
@@ -30,7 +30,7 @@
                                 <p class="card-text"><?= $club['description']; ?></p>
                                 </div>
                                 <div class="card-footer">
-                                <small class="text-muted"><?= $club['dateCreation']; ?></small>
+                                <small type="date" class="text-muted"><?= $club['date']; ?></small>
                                 </div>
 
                                 <button type="button" class="btn btn-outline-primary">Decouvrire Les membres</button>
@@ -51,5 +51,3 @@
 
 </body>
 </html>
-
-

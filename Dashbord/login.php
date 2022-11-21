@@ -2,6 +2,7 @@
 
 include('connection.php');
 
+session_start();
 
 
 ?>
@@ -24,11 +25,11 @@ include('connection.php');
     <div class="contaner">
         <div class="row g-0"id="form-to">
             <div class="col-lg-5">
-                <img src="images/logo-youcode-ma.png">
+                <img src="images/youcode.jpg">
             </div>
             <div class="col-lg-7 text-center py-5">
               <h1>Welcome <span class="back">Back</span></h1>
-              <form action="check.php" method="POST">
+              <form action="dashboard.php" method="POST">
                 <div class="form-row pt-3 pt-5">
                   <div class="offset-1 col-lg-10">
                      <input type="text" class="np px-3" name="name" placeholder="Username">

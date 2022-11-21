@@ -52,7 +52,7 @@
                                 <?php 
                                     $query = "SELECT * from apprenant";
                                     $query_run = mysqli_query($connection, $query);
-                                    $_SESSION['count'] = mysqli_num_rows($query_run);
+                                   
                                     
                                     if(mysqli_num_rows($query_run) > 0)
                                     {

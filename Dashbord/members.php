@@ -1,14 +1,8 @@
 
 <?php
-    
-    session_start();
-
     require  'connection.php';
     include_once('index.php');
     
- 
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -31,7 +25,7 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Details
+                        <h4>Student View
                             <a href="apprenants.php" class="btn btn-primary float-end">Add Students</a>
                         </h4>
                     </div>
@@ -40,46 +34,31 @@
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
-                                    <th>Nom Club</th>
-                                    <th>Logo</th>
-                                    <th>Date</th>
-                                    <th>Description</th>
-                                    <th>Members</th>
-                                    <th>Action</th>
+                                    <th>Nom Apprenant</th>
+                                    <th>Classroom</th>
+                                    <th>Age</th>
+                                    <th>logo</th>
+                                    <th>club</th>
+                                    
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
-                                    $query ="SELECT c.nom, c.date,c.description, c.logo, COUNT(a.id_pr) as members from club c left join apprenant a on c.id = a.id_fr GROUP BY c.id;";
+                                    $query="SELECT apprenant.nom,classe,age,role,club.nom as club from apprenant INNER JOIN club ON club.id = apprenant.id_fr;";
                                     $query_run = mysqli_query($connection, $query);
-                                
-                             
                                 
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
-                                        foreach($query_run as $club)
+                                        foreach($query_run as $student)
                                         {
                                                                    
                                             ?>
                                             <tr>
-                                                <td><?= $club['nom']; ?></td>
-                                                <td>
-                                                    <?php
-                                                    echo '<img src="data:image/jpg;base64,'.base64_encode($club['logo']).'">';
-                                                    ?>
-                                                </td>
-                                                <td><?= $club['date']; ?></td>
-                                                <td><?= $club['description']; ?></td>
-                                                <td> <a href="members.php"> <?= $club['members']; ?></a></td>
-                                                
-                                                <td>
-                                                    
-                                                    <a href="edit club.php?id=<?= $club['id']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    
-                                                    <form action="indexApp.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_club" value="<?=$club['id'];?>" class="btn btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </td>
+                                                <td><?= $student['nom']; ?></td>
+                                                <td><?= $student['classe']; ?></td>
+                                                <td><?= $student['age']; ?></td>
+                                                <td><?= $student['role']; ?></td>
+                                               
                                             </tr>
                                             <?php
                                         }

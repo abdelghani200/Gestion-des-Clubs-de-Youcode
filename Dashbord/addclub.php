@@ -15,7 +15,7 @@ include('connection.php');
                     </h4>
                 </div>
                 <div class="card-body">
-<form action="addclubdb.php" method="POST" enctype="multipart/form-data"> 
+   <form action="addclubdb.php" method="POST" enctype="multipart/form-data"> 
                         <div class="mb-3">
                             <label>Club Name</label>
                             <input type="text" name="ClubName" class="form-control">

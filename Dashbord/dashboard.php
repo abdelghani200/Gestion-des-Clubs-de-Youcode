@@ -15,7 +15,7 @@
                     <div>
                         <h1><?php 
                             
-                            $query = "SELECT id FROM apprenants ORDER BY id";
+                            $query = "SELECT id_pr FROM apprenant ORDER BY id_pr";
                             $query_run = mysqli_query($connection,$query);
 
                             $row = mysqli_num_rows($query_run);

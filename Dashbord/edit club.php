@@ -27,7 +27,7 @@ include('index.php');
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student Edit 
+                        <h4>Club Edit 
                             <a href="indexApp.php" class="btn btn-danger float-end">BACK</a>
                         </h4>
                     </div>
@@ -38,7 +38,7 @@ include('index.php');
                         if(isset($_GET['id'])){
                             $app_id = mysqli_real_escape_string($connection, $_GET['id']);
 
-                            $query = "SELECT * FROM apprenant WHERE id_pr='$app_id' ";
+                            $query = "SELECT * FROM club WHERE id ='$app_id' ";
                             $query_run = mysqli_query($connection, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
@@ -47,49 +47,27 @@ include('index.php');
                                 // print_r($app);
                                 ?>
 
-<form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
-                        <input type="hidden" name=app_id value="<?=$app['id_pr'];?>">
+<form action="addclubdb.php" method="POST" enctype="multipart/form-data"> 
                         <div class="mb-3">
-                            <label>Name</label>
-                            <input type="text" value="<?=$app['nom'];?>" name="name" class="form-control">
+                            <label>Club Name</label>
+                            <input type="text" value="<?=$app['nom'];?>" name="ClubName" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Age</label>
-                            <input type="number" value="<?=$app['age'];?>" name="Age" class="form-control">
+                            <label>Club Description</label>
+                            <input type="text" value="<?=$app['description'];?>" name="ClubDescription" class="form-control">
                         </div>
                         <div class="mb-3">
-                            <label>Classroom</label>
-                            <input type="text"  value="<?=$app['classe'];?>" name="Classroom" class="form-control">
+                            <label>Club Description</label>
+                            <input type="date" value="<?=$app['date'];?>"  name="date" class="form-control">
+                        </div>
+                        
+                        <div class="mb-3">
+                            <label>Club Cover</label>
+                            <!-- <img src="/images/youcode.jpg" name="photo"  class="form-control"> -->
+                            <input type="file" value="<?=$app['logo'];?>"name="clubcover" class="form-control">
                         </div>
                         <div class="mb-3">
-                        <label>role</label>
-                            <select name="rolee" id="" class="form-control">
-                                <option value="member">member</option>
-                                <option value="president">president</option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                            <label>Choisir un club</label>
-                            <select name="selectClub" class="form-control">
-                                <?php
-                                    $result = mysqli_query($connection, "SELECT nom FROM club;");
-                                    while ($tables = mysqli_fetch_row($result)){
-                                        ?>
-                                        <option value="<?php
-                                        echo($tables[0]);
-                                        ?>
-                                        ">
-                                        <?php
-                                        echo($tables[0]);
-                                        ?>
-                                        <?php
-                                    }
-                                    ?>
-                                    </option>
-                            </select>
-                        </div>
-                        <div class="mb-3">
-                        <button type="submit" name="update_Apprenant" class="btn btn-primary">updat Student</button>
+                        <button type="submit" name="club-edit" class="btn btn-primary">Add Club</button>
                         </div>
                     </form>
 

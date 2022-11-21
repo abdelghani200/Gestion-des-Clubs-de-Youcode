@@ -109,38 +109,25 @@ header label span{
     outline: none;
 }
 
-.user-wrapper{
-    display: flex;
-    align-items: center;
-}
 
 .user-wrapper small{
     display: inline-block;
     color: var(--text-gray);
 }
-.user-wrapper img{
-    border-radius: 50px;
-    margin-right: 1rem;
-}
 
+/* 
 main{
-    /* margin-top: 5rem;  */
+    margin-top: 85px;
+    padding: 2rem 1.5rem;
+    background:var(--text-gray);
     min-height: calc(100vh - 90px);
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    /* background: red; */
-    
-}
+} */
 
 .cards{
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
+    display: flex;
+    justify-content: center;
+    align-items: center;
     grid-gap: 2rem;
-    /* background: red; */
-    
 }
 
 .card-single{
@@ -149,53 +136,43 @@ main{
     background: #fff;
     padding: 2rem;
     border-radius: 2px;
-    border: 2px solid var(--main-color);
+    width: 300px;
     height: 400px;
-    width: 413px;
 }
 
-
-
-.card-single div:last-child span{
-    font-size: 3rem;
+.card-single  span{
+    font-size: 2rem;
     color: var(--main-color);
 }
-/* 
+
+.card-single {
+    color: var(--text-gray);
+}
+.card-single:last-child{
+    background: var(--main-color);
+}
+.card-single:last-child h1,
+.card-single:last-child div:first-child span,
+.card-single:last-child div:last-child span{
+    color: white;
+}
+
+
 body{
     width:100vw;
 }
 .container{
-    
+   
     display:block;
     margin-top: 100px !important; 
 }
 
-#code{
-    color: var(--main-color);
-}
-*/
-.card{
-    width: 400px;
-    padding: 1.5rem 1.5rem 0 1.5rem;
-    margin-bottom: 1rem;
-} 
-
-
 .howa{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     flex-wrap: wrap;
-    margin-top: 4.5rem;
 }
 
-.clubhowa{
-    margin-top: 4.5rem;
-}
-
-#code{
+#title-page{
     color: #63aaca;
-}
-
-.title-acceuil{
-    margin-top: 4.5rem;
 }
