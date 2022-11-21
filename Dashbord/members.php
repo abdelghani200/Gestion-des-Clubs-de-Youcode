@@ -58,6 +58,7 @@
                                                 <td><?= $student['classe']; ?></td>
                                                 <td><?= $student['age']; ?></td>
                                                 <td><?= $student['role']; ?></td>
+                                                <td><?= $student['club']; ?></td>
                                                
                                             </tr>
                                             <?php

@@ -84,8 +84,8 @@ include('index.php');
                                         ?>
                                         <?php
                                     }
-                                    ?>
-                                    </option>
+                                ?>
+                                         </option>
                             </select>
                         </div>
                         <div class="mb-3">

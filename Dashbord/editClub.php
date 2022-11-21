@@ -1,6 +1,7 @@
 <?php
 
 include('connection.php');
+include('index.php');
 
 
 ?>
@@ -27,7 +28,7 @@ include('connection.php');
                 <div class="card">
                     <div class="card-header">
                         <h4>Club Edit 
-                            <a href="indexApp.php" class="btn btn-danger float-end">BACK</a>
+                            <!-- <a href="indexApp.php" class="btn btn-danger float-end">BACK</a> -->
                         </h4>
                     </div>
                     <div class="card-body">
@@ -37,7 +38,7 @@ include('connection.php');
                         if(isset($_GET['id'])){
                             $clb_id = mysqli_real_escape_string($connection, $_GET['id']);
 
-                            $query = "SELECT * FROM club WHERE id='$clb_id' ";
+                            $query = "SELECT * FROM club WHERE id ='$clb_id' ";
                             $query_run = mysqli_query($connection, $query);
 
                             if(mysqli_num_rows($query_run) > 0)
@@ -46,41 +47,32 @@ include('connection.php');
                                 // print_r($app);
                                 ?>
 
-                                <form action="indexApp.php" method="POST">
+                    <form action="indexClub.php" method="POST" enctype="multipart/form-data"> 
 
-                                <input type="hidden" name="app_id" value="<?= $clb['id']; ?>">
-                                
-                                    <div class="mb-3">
-                                        <label>Logo</label>
-                                        <input type="text" name="name" value="<?=$clb['logo'];?>" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label>Clob Name</label>
-                                        <input type="text" name="secondname" value="<?=$clb['nom'];?>" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label>Date de creation</label>
-                                        <input type="date" name="date-creation" value="<?=$clb['dateCreation'];?>" class="form-control">
-                                    </div>
-                                    <div class="mb-3">
-                                        <label>Description</label>
-                                        <textarea type="text" name="description" value="<?=$clb['description'];?>" class="form-control"></textarea>
-                                    </div>
-                                    <div class="mb-3">
-                                        <label>Choisir un club</label>
-                                        <select name="selectClub" class="form-control">
-                                            <option value="Club Art" name="selectClub">Club Art</option>
-                                            <option value="Club Sport" name="selectClub">Club Sport</option>
-                                            <option value="Club chtih" name="selectClub">Club chtih</option>
-                                        </select>
-                                    </div>
-                                    <div class="mb-3">
-                                        <button type="submit" name="update_Club" class="btn btn-primary">
-                                            Update Student
-                                        </button>
-                                    </div>
+                        <input type="hidden" name=clb_id value="<?=$clb['id'];?>">
+                        <div class="mb-3">
+                            <label>Club Name</label>
+                            <input type="text" value="<?=$clb['nom'];?>" name="ClubName" class="form-control" >
+                        </div>
+                        <div class="mb-3">
+                            <label>Club Description</label>
+                            <textarea type="text" value="<?=$clb['description'];?>" name="ClubDescription" class="form-control"></textarea>
+                        </div>
+                        <div class="mb-3">
+                            <label>Date</label>
+                            <input type="date" value="<?=$clb['date'];?>"  name="date" class="form-control">
+                        </div>
+                       
+                        <div class="mb-3">
+                            <label>Club Cover</label>                          
+                            <input type="file" name="clubcover" class="form-control">
+                        </div>
 
-                                </form>
+                        <div class="mb-3">
+                        <button type="submit" name="club-edit" class="btn btn-primary">Edit Club</button>
+                        </div>
+                        
+                    </form>
 
                                 <?php
                             }
@@ -100,3 +92,4 @@ include('connection.php');
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+

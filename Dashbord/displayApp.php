@@ -18,7 +18,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
 
     <title>Student CRUD</title>
 </head>
@@ -32,7 +31,6 @@
                 <div class="card">
                     <div class="card-header">
                         <h4>Student Details
-                            <a href="apprenants.php" class="btn btn-primary float-end">Add Students</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -43,16 +41,16 @@
                                     <th>Nom Apprenant</th>
                                     <th>Classroom</th>
                                     <th>Age</th>
-                                    <th>Photo</th>
-                                    <th>Action</th>
+                                    <th>Role</th>      
                                     <th>Club</th>
+                                    <th>Action</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <?php 
                                     $query = "SELECT * from apprenant";
                                     $query_run = mysqli_query($connection, $query);
-                                   
+                                    $_SESSION['count'] = mysqli_num_rows($query_run);
                                     
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
@@ -66,17 +64,18 @@
                                                 <td><?= $student['age']; ?></td>
                                                 <td><?= $student['role']; ?></td>
                                                 <?php  $id_fr  = $student['id_fr'] ; ?>
-                                                <td>
                                                 
-                                                    <a href="editApp.php?id=<?= $student['id_pr']; ?>" class="btn btn-success btn-sm">Edit</a>
-                                                    <form action="indexApp.php" method="POST" class="d-inline">
-                                                        <button type="submit" name="delete_App" value="<?=$student['id_pr'];?>" class="btn btn-danger btn-sm">Delete</button>
-                                                    </form>
-                                                </td>
                                                     <?php
                                                     $sqlresult = mysqli_fetch_row(mysqli_query($connection, "SELECT nom FROM `club` WHERE id = $id_fr;"));
                                                     ?>
                                                 <td><?= $sqlresult[0]?></td>
+                                                <td>
+                                                
+                                                    <a href="editApp.php?id=<?= $student['id_pr']; ?>" class="btn btn-success btn-sm">Edit</a>
+                                                    <form action="indexApp.php?id=<?= $student['id_pr']; ?>" method="POST" class="d-inline">
+                                                        <button type="submit" name="delete_App" value="<?=$student['id_pr'];?>" class="btn btn-danger btn-sm">Delete</button>
+                                                    </form>
+                                                </td>
                                             </tr>
                                             <?php
                                         }
@@ -97,7 +96,9 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+<?php
+     include('footer.php');
+?>
 </html>

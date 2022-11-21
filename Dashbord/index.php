@@ -18,7 +18,7 @@
   <div class="main-content">
     <div>
             <h2>
-                <label id="sidebarCollapse" for=""><span class="las la-bars"></span></label> YCODE
+                <label id="sidebarCollapse" for=""><span class="las la-bars"></span></label> You <span id="code">Code</span>
             </h2>
             </div>  
               <div class="search-wrapper">
@@ -40,7 +40,7 @@
   <div class="py-4 px-3 mb-4">
     <div class="media d-flex align-items-center">
       <div class="media-body">
-        <h4 class="m-0 text-white">YOUCODE</h4>
+        <h4 class="m-0 text-white las la-laptop-code">YouCode</h4>
         <p class="font-weight-light text-muted mb-0">Gestion des club</p>
       </div>
     </div>
@@ -51,15 +51,19 @@
                     <span>Dashboard</span></a>
                 </li>
                 <li>
-                    <a href="addclub.php" class="nav-link  font-italic"><span class="las la-igloo"></span>
+                    <a href="acceuil.php" class="nav-link  font-italic"><span class="las la-home"></span>
+                    <span>Acceuil</span></a>
+                </li>
+                <li>
+                    <a href="addclub.php" class="nav-link  font-italic"><span class="las la-clipboard-list"></span>
                     <span>Add Clubs</span></a>
                 </li>
                 <li>
-                    <a href="listappclub.php" class="nav-link  font-italic"><span class="las la-clipboard-list"></span>
+                    <a href="displayClub.php" class="nav-link  font-italic"><span class="las la-clipboard-list"></span>
                     <span>Clubs</span></a>
                 </li>
                 <li>
-                    <a href="apprenants.php" class="nav-link  font-italic"><span class="las la-shopping-bag"></span>
+                    <a href="apprenants.php" class="nav-link  font-italic"><span class="las la-users"></span>
                     <span>Add Apprenants</span></a>
                 </li>
                 <li>
@@ -79,4 +83,13 @@
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="css/main.js"></script>
+
+<?php
+     
+    
+
+?>
+
+
 </html>
+
