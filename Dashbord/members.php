@@ -38,13 +38,16 @@
                                     <th>Classroom</th>
                                     <th>Age</th>
                                     <th>logo</th>
-                                    <th>club</th>
+                                    <!-- <th>club</th> -->
                                     
                                 </tr>
                             </thead>
                             <tbody>
-                                <?php 
-                                    $query="SELECT apprenant.nom,classe,age,role,club.nom as club from apprenant INNER JOIN club ON club.id = apprenant.id_fr;";
+                                <?php
+
+                                    // var_dump($_GET) ;
+                                    $cb_id=$_GET['id'];
+                                    $query="SELECT a.* FROM apprenant a WHERE a.id_fr=$cb_id;";
                                     $query_run = mysqli_query($connection, $query);
                                 
                                     if(mysqli_num_rows($query_run) > 0)
@@ -58,7 +61,7 @@
                                                 <td><?= $student['classe']; ?></td>
                                                 <td><?= $student['age']; ?></td>
                                                 <td><?= $student['role']; ?></td>
-                                                <td><?= $student['club']; ?></td>
+                                                <!-- <td><?= $student['club']; ?></td> -->
                                                
                                             </tr>
                                             <?php
@@ -83,4 +86,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+
+<?php
+    include('footer.php');
+    ?>
 </html>

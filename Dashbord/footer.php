@@ -5,6 +5,6 @@
     © 2022 Copyright:
     <a class="text-reset fw-bold">YouCode.ma</a>
   </div>
-  <!-- Copyright -->
+  
 </footer>
 <!-- Footer -->

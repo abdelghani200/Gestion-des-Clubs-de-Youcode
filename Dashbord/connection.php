@@ -3,7 +3,7 @@
 $host ='localhost';
 $user ='root';
 $password ='';
-$namebasedonnee='youcodeclub';
+$namebasedonnee='gestionclubs';
 $connection = mysqli_connect($host,$user,$password,$namebasedonnee);
 
 // if($connection){

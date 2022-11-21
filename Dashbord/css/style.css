@@ -296,3 +296,6 @@
 
 }
 
+div.container{
+  height: 80vh !important;
+}
