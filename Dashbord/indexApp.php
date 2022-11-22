@@ -4,26 +4,27 @@ include  ('connection.php');
 
 if(isset($_POST['save-apprenant'])){
     $name=mysqli_real_escape_string($connection,$_POST['name']);
-    $secondname=mysqli_real_escape_string($connection,$_POST['secondname']);
-    // $email=mysqli_real_escape_string($connection,$_POST['email']);
+    
+    $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
     $class=mysqli_real_escape_string($connection,$_POST['Classroom']);
     $age=mysqli_real_escape_string($connection,$_POST['Age']);
-    // $photo=mysqli_real_escape_string($connection,$_POST['photo']);
+  
     $clubs=$_POST['selectClub'];
     $newquery = "SELECT id FROM `club` WHERE nom = '$clubs';";
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
     $rolee=$_POST['rolee'];
-    $query = "INSERT INTO apprenant (nom, classe, age, role,id_fr)
-    VALUE('$name' , '$class', '$age', '$rolee', '$ids[0]')";
+
+    $query = "INSERT INTO apprenant (nom,photo, classe, age, role,id_fr)
+    VALUE('$name' ,'$image', '$class', '$age', '$rolee', '$ids[0]')";
 
 $query_run = mysqli_query($connection,$query);
 if($query_run){
-    echo "Student Created Successfully";
+    // echo "Student Created Successfully";
     header("Location: displayApp.php");
 }
 else{
-   echo "Student Not Successfully";
+//    echo "Student Not Successfully";
    header("Location: apprenants.php");
 }
 }
@@ -34,8 +35,8 @@ if(isset($_POST['update_Apprenant']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['app_id']);
     
-    
     $name=mysqli_real_escape_string($connection,$_POST['name']);
+    $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
     $age=mysqli_real_escape_string($connection,$_POST['Age']);
     $classe=mysqli_real_escape_string($connection,$_POST['Classroom']);
     $role=mysqli_real_escape_string($connection,$_POST['rolee']);
@@ -44,7 +45,7 @@ if(isset($_POST['update_Apprenant']))
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
 
-    $query = "UPDATE apprenant SET nom='$name',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr='$app_id' ";
+    $query = "UPDATE apprenant SET nom='$name',photo='$image',  classe='$classe',age='$age', role='$role' , id_fr='$ids[0]' WHERE id_pr='$app_id' ";
 
     $query_run = mysqli_query($connection,$query);
     
@@ -68,6 +69,7 @@ if(isset($_POST['update_Apprenant']))
     
     
     $name=mysqli_real_escape_string($connection,$_POST['name']);
+    $image = addslashes(file_get_contents($_FILES['clubcover']['tmp_name']));
     $age=mysqli_real_escape_string($connection,$_POST['Age']);
     $classe=mysqli_real_escape_string($connection,$_POST['Classroom']);
     $role=mysqli_real_escape_string($connection,$_POST['rolee']);
@@ -76,7 +78,7 @@ if(isset($_POST['update_Apprenant']))
     $result = mysqli_query($connection, $newquery);
     $ids = mysqli_fetch_row($result);
     $id = intval($_GET['id_pr']);
-    $query = "UPDATE apprenant SET nom='$name',classe='$classe',age='$age', role='$role' , id_fr='$ids[0]'  where id = $id ";
+    $query = "UPDATE apprenant SET nom='$name',photo='$image',classe='$classe',age='$age', role='$role' , id_fr='$ids[0]'  where id = $id ";
 
     $query_run = mysqli_query($connection,$query);
     
@@ -121,8 +123,8 @@ if(isset($_POST['update_Apprenant']))
 if(isset($_POST['delete_App']))
 {
     $app_id = mysqli_real_escape_string($connection, $_POST['delete_App']);
-    $id = intval($_GET['id']);
-    $query = "DELETE FROM apprenant where id_pr = $id ";
+    
+    $query = "DELETE FROM apprenant where id_pr = $app_id ";
     $query_run = mysqli_query($connection, $query);
 
     if($query_run)

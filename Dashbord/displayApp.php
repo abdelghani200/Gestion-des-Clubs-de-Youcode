@@ -29,17 +29,14 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
-                    <div class="card-header">
-                        <h4>Student Details
-                        </h4>
-                    </div>
                     <div class="card-body">
 
                         <table class="table table-bordered table-striped">
                             <thead>
                                 <tr>
                                     <th>Nom Apprenant</th>
-                                    <th>Classroom</th>
+                                    <th>Photo</th>
+                                    <th>Classe</th>
                                     <th>Age</th>
                                     <th>Role</th>      
                                     <th>Club</th>
@@ -50,7 +47,7 @@
                                 <?php 
                                     $query = "SELECT * from apprenant";
                                     $query_run = mysqli_query($connection, $query);
-                                    $_SESSION['count'] = mysqli_num_rows($query_run);
+                                    // $_SESSION['count'] = mysqli_num_rows($query_run);
                                     
                                     if(mysqli_num_rows($query_run) > 0)
                                     {
@@ -60,6 +57,7 @@
                                             ?>
                                             <tr>
                                                 <td><?= $student['nom']; ?></td>
+                                                <td> <?php echo '<img   style="width: 80px; height: 80px; border-radius: 50px;" src="data:image/jpeg;base64,'.base64_encode($student['photo']).'"/>'; ?></td>
                                                 <td><?= $student['classe']; ?></td>
                                                 <td><?= $student['age']; ?></td>
                                                 <td><?= $student['role']; ?></td>
@@ -96,9 +94,11 @@
         </div>
     </div>
 
-
-</body>
-<?php
+    <?php
      include('footer.php');
 ?>
+
+
+</body>
+
 </html>

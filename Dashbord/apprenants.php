@@ -30,10 +30,10 @@ include('connection.php');
                         <label class="text-label">Nom</label>
                         <input type="text" name="name" class="form-control" placeholder="Entrer votre nom" required>
                     </div>
-                    <!-- <div class="mb-3">
-                        <label class="text-label">prenom</label>
-                        <input type="number" name="Age" class="form-control" placeholder="Entrer votre age" required>
-                    </div> -->
+                    <div class="mb-3">
+                        <label class="text-label">Photo</label>
+                        <input type="file" name="clubcover" class="form-control" required>
+                    </div>
                     <div class="mb-3">
                         <label class="text-label">Age</label>
                         <input type="number" name="Age" class="form-control" placeholder="Entrer votre age" required>
@@ -41,7 +41,8 @@ include('connection.php');
                     <div class="mb-3">
                         <label class="text-label">Classroom</label>
                         <select name="Classroom" class="form-control" required>
-                            <option value="">Ada lovelace</option>
+                            <option value="">--Please choose an option--</option>
+                            <option value="Ada Lovelace">Ada Lovelace</option>
                             <option value="">hhhhh</option>
                             <option value="">dgdfdret</option>
                             <option value="">gdfdrete</option>
@@ -87,5 +88,11 @@ include('connection.php');
 </div>
 
 </body>
+
+<?php
+   
+   include('footer.php');
+
+?>
 
 </html>

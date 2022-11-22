@@ -153,12 +153,12 @@
   border-radius: 50px;
   margin-right: 1rem;
 }
-
+/* 
 .card-add{
   border: 2px gray;
   border-style: solid;
   margin-top: 2rem;
-}
+} */
 
 .text-h4{
   text-align: center;
@@ -297,5 +297,13 @@
 }
 
 div.container{
-  height: 80vh !important;
+  height: 140vh !important;
 }
+
+main{
+  height: 80vh;
+}
+/* 
+div.cont-howa{
+  height: 600vh !important;
+} */

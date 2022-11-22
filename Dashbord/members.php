@@ -25,8 +25,8 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Student View
-                            <a href="apprenants.php" class="btn btn-primary float-end">Add Students</a>
+                        <h4>Members View
+                            <a href="apprenants.php" class="btn btn-primary float-end">Add Members</a>
                         </h4>
                     </div>
                     <div class="card-body">
@@ -37,7 +37,7 @@
                                     <th>Nom Apprenant</th>
                                     <th>Classroom</th>
                                     <th>Age</th>
-                                    <th>logo</th>
+                                    <th>Photo</th>
                                     <!-- <th>club</th> -->
                                     
                                 </tr>
@@ -60,7 +60,7 @@
                                                 <td><?= $student['nom']; ?></td>
                                                 <td><?= $student['classe']; ?></td>
                                                 <td><?= $student['age']; ?></td>
-                                                <td><?= $student['role']; ?></td>
+                                                <td><?php echo '<img   style="width: 80px; height: 80px; border-radius: 50px;" src="data:image/jpeg;base64,'.base64_encode($student['photo']).'"/>'; ?></td>
                                                 <!-- <td><?= $student['club']; ?></td> -->
                                                
                                             </tr>

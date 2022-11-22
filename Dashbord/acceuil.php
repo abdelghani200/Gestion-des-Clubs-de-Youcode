@@ -11,7 +11,7 @@
 
 ?>
              <center><h1 class="title-acceuil">Présentation des clubs</h1></center>
-    <div class="container howa">
+    <div class="container howa cont-howa">
              
             <?php
               
@@ -43,10 +43,15 @@
                  
 
             ?>  
-        </div>           
-                  
+    </div>           
+    
+   
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
+     
+
+
 </html>
+

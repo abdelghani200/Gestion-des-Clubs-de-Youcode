@@ -47,19 +47,29 @@ include('index.php');
                                 // print_r($app);
                                 ?>
 
-<form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
+                    <form action="indexApp.php" method="POST" enctype="multipart/form-data"> 
                         <input type="hidden" name=app_id value="<?=$app['id_pr'];?>">
                         <div class="mb-3">
                             <label>Name</label>
                             <input type="text" value="<?=$app['nom'];?>" name="name" class="form-control">
                         </div>
                         <div class="mb-3">
+                        <label class="text-label">Photo</label>
+                        <input type="file"  name="clubcover" class="form-control" required>
+                    </div>
+                        <div class="mb-3">
                             <label>Age</label>
                             <input type="number" value="<?=$app['age'];?>" name="Age" class="form-control">
                         </div>
                         <div class="mb-3">
                             <label>Classroom</label>
-                            <input type="text"  value="<?=$app['classe'];?>" name="Classroom" class="form-control">
+                            <select name="Classroom" class="form-control" required>
+                            <option value="">--Please choose an option--</option>
+                            <option value="Ada Lovelace">Ada Lovelace</option>
+                            <option value="">hhhhh</option>
+                            <option value="">dgdfdret</option>
+                            <option value="">gdfdrete</option>
+                            </select>
                         </div>
                         <div class="mb-3">
                         <label>role</label>
