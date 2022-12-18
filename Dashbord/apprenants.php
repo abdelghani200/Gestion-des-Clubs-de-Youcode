@@ -43,9 +43,9 @@ include('connection.php');
                         <select name="Classroom" class="form-control" required>
                             <option value="">--Please choose an option--</option>
                             <option value="Ada Lovelace">Ada Lovelace</option>
-                            <option value="">hhhhh</option>
-                            <option value="">dgdfdret</option>
-                            <option value="">gdfdrete</option>
+                            <option value="Alan Turing">Alan Turing</option>
+                            <option value="Margaret Hamilton">Margaret Hamilton</option>
+                            <option value="Sharp Coders">Sharp Coders</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -62,13 +62,8 @@ include('connection.php');
                             $result = mysqli_query($connection, "SELECT nom FROM club;");
                             while ($tables = mysqli_fetch_row($result)) {
                             ?>
-                                <option value="<?php
-                                                echo ($tables[0]);
-                                                ?>
-                                        ">
-                                    <?php
-                                    echo ($tables[0]);
-                                    ?>
+                                <option value="<?php echo ($tables[0]);?>">
+                                    <?php echo ($tables[0]);?>
                                 <?php
                             }
                                 ?>

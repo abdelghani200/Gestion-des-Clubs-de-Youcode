@@ -6,7 +6,7 @@ include('connection.php');
 
 ?>
 
-<div class="container card-add">
+<div class="container card-add foot-addclb">
  
     <div class="row">
             <div class="col-md-12">

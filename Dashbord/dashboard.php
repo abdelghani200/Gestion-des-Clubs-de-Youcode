@@ -3,6 +3,9 @@
 <?php
      
      session_start();
+     if(!isset($_SESSION['admin'])){
+        header('location: login.php');
+      }
      include ('index.php');
      include  ('connection.php');
 ?>
@@ -10,7 +13,7 @@
 
         <main>
             <center><h1>Welcome To You<span id="code">Code</span> Clubs</h1></center> 
-            <div class="cards">
+            <div class="cards dash-td">
                 <div class="card-single card-dash">
                     <div>
                         <h1><?php 

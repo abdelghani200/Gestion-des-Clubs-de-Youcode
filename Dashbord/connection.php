@@ -6,12 +6,6 @@ $password ='';
 $namebasedonnee='gestionclubs';
 $connection = mysqli_connect($host,$user,$password,$namebasedonnee);
 
-// if($connection){
-//     echo "connected";
-// }else{
-//     echo "Makhadamax l'conexion";
-// }
-
-
-
 ?>
+
+

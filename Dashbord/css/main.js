@@ -10,5 +10,7 @@ $(function() {
     $('#overlayy').on('click', function() {
       $('#sidebar, #content,#overlayy').toggleClass('active');
     });
+    // document.querySelector(); -> $()
   }
   );
+

@@ -64,8 +64,8 @@ include('index.php');
                         </div>
                        
                         <div class="mb-3">
-                            <label>Club Cover</label>                          
-                            <input type="file" name="clubcover" class="form-control">
+                            <label>Club image</label>                          
+                            <input type="file" name="clubcover" value="" class="form-control">
                         </div>
 
                         <div class="mb-3">

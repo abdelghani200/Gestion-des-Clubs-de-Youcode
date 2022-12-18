@@ -55,7 +55,7 @@ include('index.php');
                         </div>
                         <div class="mb-3">
                         <label class="text-label">Photo</label>
-                        <input type="file"  name="clubcover" class="form-control" required>
+                        <input type="file"  name="clubcover" value="<?=$app['nom'];?>" class="form-control" >
                     </div>
                         <div class="mb-3">
                             <label>Age</label>
@@ -64,11 +64,11 @@ include('index.php');
                         <div class="mb-3">
                             <label>Classroom</label>
                             <select name="Classroom" class="form-control" required>
-                            <option value="">--Please choose an option--</option>
-                            <option value="Ada Lovelace">Ada Lovelace</option>
-                            <option value="">hhhhh</option>
-                            <option value="">dgdfdret</option>
-                            <option value="">gdfdrete</option>
+                            <!-- <option value="">--Please choose an option--</option> -->
+                            <option value="<?=$app['classe'];?>">Ada Lovelace</option>
+                            <option value="<?=$app['classe'];?>">Alan Turing</option>
+                            <option value="<?=$app['classe'];?>">Margaret Hamilton</option>
+                            <option value="<?=$app['classe'];?>">Sharp Coders</option>
                             </select>
                         </div>
                         <div class="mb-3">
@@ -80,7 +80,7 @@ include('index.php');
                         </div>
                         <div class="mb-3">
                             <label>Choisir un club</label>
-                            <select name="selectClub" class="form-control">
+                            <select name="selectClub" class="form-control" value="<?=$app['classroom'];?>">
                                 <?php
                                     $result = mysqli_query($connection, "SELECT nom FROM club;");
                                     while ($tables = mysqli_fetch_row($result)){

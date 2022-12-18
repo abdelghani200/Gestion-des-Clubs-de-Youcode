@@ -289,16 +289,16 @@
 
 
 .club-desc{
-  white-space: nowrap;
+   white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     max-width: 1px;
 
 }
-
+/* 
 div.container{
-  height: 140vh !important;
-}
+  height: auto !important;
+} */
 
 main{
   height: 80vh;
@@ -307,3 +307,32 @@ main{
 div.cont-howa{
   height: 600vh !important;
 } */
+
+.foot-addclb{
+  height: 78vh !important;
+}
+
+.foot-sing{
+  height: 77vh !important;
+}
+
+@media (max-width : 600px) {
+
+  .dash-td{
+    display: flex;
+    flex-direction: column;
+  }
+  footer{
+    display: none;
+  }
+}
+
+
+
+
+/* 
+.nomcl{
+
+  border: 1px solid chocolate;
+} */
+

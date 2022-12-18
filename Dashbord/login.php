@@ -1,8 +1,9 @@
 <?php
-
 include('connection.php');
-
 session_start();
+if(isset($_SESSION['admin'])){
+  header('location: dashboard.php');
+}
 
 
 ?>
@@ -33,24 +34,32 @@ session_start();
             </div>
             <div class="col-lg-7 text-center py-5">
               <h1>Welcome <span class="back">Back</span></h1>
-              <form action="dashboard.php" method="POST">
+
+              <form action="indexApp.php" method="POST">
                 <div class="form-row pt-3 pt-5">
                   <div class="offset-1 col-lg-10">
-                     <input type="text" class="np px-3" name="name" placeholder="Username">
+                     <input type="text" class="np px-3" name="name" placeholder="Username" required>
                   </div>
                 </div>
                 <div class="form-row pt-3">
                   <div class="offset-1 col-lg-10">
-                     <input type="password" class="np px-3" name="password" placeholder="Password">
+                     <input type="password" class="np px-3" name="password" placeholder="Password" required>
                   </div>
                 </div>
                 <div class="form-row py-3">
                   <div class="offset-1 col-lg-10">
-                     <button type="submit" class="btn1" name="submit">SingUp</button>
+                     <button type="submit" class="btn1" name="login">login</button>
                   </div>
                 </div>
+                <?php
+                    if(isset($_SESSION["error"])){
+                        $error = $_SESSION["error"];
+                        echo "<span>$error</span>";
+                    }
+                ?>  
 
               </form>
+
               <p>Or Login With</p>
               <span class="icon-fb"><ion-icon name="logo-facebook"></ion-icon></span>
               <span class="icon-gl"><ion-icon name="logo-google"></ion-icon></span>
@@ -58,6 +67,8 @@ session_start();
         </div>
     </div>
   </section>
+
+  
   
 
 
@@ -65,4 +76,7 @@ session_start();
 </body>
 </html>
 
+<?php
+    unset($_SESSION["error"]);
+?>
  
