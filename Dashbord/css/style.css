@@ -270,8 +270,20 @@
 
 .howa{
   display: flex;
+  flex-direction: row;
   justify-content: space-between;
   flex-wrap: wrap;
+  /* width: 40%; */
+}
+
+.card-too{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.card-x{
+  margin-bottom: 1rem;
+  width: 30%;
 }
 
 .card-img-top{
@@ -303,10 +315,10 @@ div.container{
 main{
   height: 80vh;
 }
-/* 
-div.cont-howa{
-  height: 600vh !important;
-} */
+
+.cont-howa{
+  justify-content: space-around;
+}
 
 .foot-addclb{
   height: 78vh !important;
